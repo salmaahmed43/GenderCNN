@@ -1,0 +1,25 @@
+{
+    "builds": [
+      {
+        "src": "GenderCNN/main.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.12"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "GenderCNN/main.py"
+      }
+    ],
+    "rewrites": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
+
+}
